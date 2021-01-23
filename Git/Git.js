@@ -24,4 +24,28 @@ console.log('Hello worldd!');
 // …or import code from another repository
 // You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
 
-ctrl + sh + k
+// ctrl + sh + k
+//
+// git status
+//
+// git commit -m ''
+//
+// git add ./(назва файла)
+//
+// git add . додаються всі файли, які є на проекті
+//
+// git push
+//
+// git push --force це робиться в крайньому випадку, щоб повернутися на декілька кроків назад
+//
+// git pull завантажити зміни проекту з гіта, які робив не ти а колеги
+
+
+
+// cd (назва папки куди перейти)
+// cd .. перейти на одну папку назад
+
+// ls відображає всі папки
+
+// ll відображає детальну інформацію про папки
+

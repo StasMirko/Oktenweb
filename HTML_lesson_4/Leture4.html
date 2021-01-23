@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex</title>
+    <style>
+
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .box-list{
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;   /*vektor x*/
+            align-items: flex-start;             /*vektor y*/
+            /*flex-wrap: wrap;*/                 /*elementy perenosatca a ne zgimautca*/
+            /*flex-wrap: nowrap;*/           /*elementy budut zgimatuca*/
+        }
+        .box{
+            /*width: 200px;*/
+            flex-basis: 200px;
+            /*height: 100px;*/
+            min-height: 100px;                /*minimalna visota, yaksho bilshe kontentu to rozshiraetca*/
+            box-sizing: border-box;          /* border ide vseredunu a ne nazovni*/
+            border: 5px black solid;
+        }
+
+        .target1{
+            flex-grow: 2;                /*скільки займуть вільного місця в коуфецієнтах*/
+            /*flex-shrink: 4;*/          /*наскільки швидко будуть зменшуватися елементи*/
+            order: 3;                    /*тасує улементи, в кого бшльший ордер той правіше, за замовчуванням ордер 0, можна давати відємні значення*/
+        }
+        .target2{
+            flex-grow: 3;
+            order: 4;
+            align-self: center;          /*розташовує окремий внутрішній елемент незалежно від батьківського блоку*/
+            justify-self: center;        /*те саме але в іншій осі*/
+        }
+
+        .iner-box{
+            width: 40px;
+            height: 40px;
+            box-sizing: border-box;
+            border: 3px red solid;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box-list">
+        <div class="box target1">Lorem1</div>
+        <div class="box target2">Lorem2</div>
+        <div class="box">Lorem3</div>
+        <div class="box">Lorem4</div>
+        <div class="box" style="display: flex">Lorem5
+            <div class="iner-box">iner-box</div>
+            <div class="iner-box">iner-box</div>
+            <div class="iner-box">iner-box</div>
+        </div>
+    </div>
+
+</body>
+</html>

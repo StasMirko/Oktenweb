@@ -1,0 +1,38 @@
+.box-list{
+    width: 600px;
+    height: 700px;
+    margin: 0;
+    box-sizing: border-box;
+    border: 5px solid brown;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.box1{
+    width: 100%;
+    height: 25%;
+    background: orange;
+}
+
+.box2{
+    width: 25%;
+    height: 50%;
+
+}
+
+.red{
+    background: red;
+}
+
+.green{
+    background: green;
+}
+
+.blue{
+    background: blue;
+}
+
+.black{
+    background: black;
+}
