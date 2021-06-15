@@ -18,7 +18,10 @@
 
 // // alert(slovo1);
 //
-// // console.log(number1);
+
+// number1 = 2;
+//
+// console.log(number1+ number2+ slovo2);
 //
 // // document.write(slovo2)
 //
@@ -61,6 +64,12 @@
 // console.log(result)
 // // parseInt робить із дробних чисел цілі
 //
+// let a = 3.3;
+// let d = '3.5';
+// console.log(d);
+// console.log(parseInt(a));
+// console.log(parseInt(d));
+//
 //
 // - при помощи prompt()  получить 3 числа с плавающей точекой.
 //     при помощи parseFloat привести их к соответсвующему типу.
@@ -75,7 +84,8 @@
 //
 // // майже те саме, що +
 //
-// // console.log(parseInt('AF', 16)); це те що пояснював Юра, всі типи відліку це 16рійна
+// console.log(parseInt('AF', 16));
+// це те що пояснював Юра, всі типи відліку це 16рійна
 //
 //
 // - при помощи prompt()  получить 3 числа с плавающей точекой. Округлить их при помощи Math.round
@@ -110,6 +120,21 @@
 // let c = true;
 // let d = undefined;
 //
+// let arr = [];
+// let q = [0];
+// let w = {};
+// let e = {a: 0};
+// let f = function () {
+// }
+// let nen = NaN;
+//
+// console.log(!! arr);
+// console.log(!! q);
+// console.log(!! w);
+// console.log(!! e);
+// console.log(!! f);
+// console.log(!! nen);
+
 // console.log(typeof a);
 // console.log(typeof b);
 // console.log(typeof c);
@@ -264,10 +289,10 @@
 // 10. Какие значения выведет в окно браузера следующий фрагмент кода?  и почему?
 // let str = "20";
 // let a = 5;
-// document.write(str + a + "<br/>");
-// document.write(str - a + "<br/>");
-// document.write(str * "2" + "<br/>");
-// document.write(str / 2 + "<br/>");
+// console.log(str + a);
+// console.log(str - a);
+// console.log(str * "2");
+// console.log(str / 2);
 
 // 11. Какие значения выведет в окно консоли следующий фрагмент кода если его поместить в console.log?
 // console.log(parseInt("3.14"))

@@ -131,6 +131,54 @@
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і доавляет його в поточний об'єкт car
 // ==============================================
+
+class Car {
+    constructor(model, producer, year, speed, volume) {
+        this.model = model;
+        this.producer = producer;
+        this.year = year;
+        this.speed = speed;
+        this.volume = volume;
+    }
+
+    drive(){
+        console.log(`їдемо зі швидкістю ${this.speed} на годину`);
+    };
+
+    info(){
+        console.log(`Model: ${this.model}, producer: ${this.producer}, year: ${this.year}, 
+        speed: ${this.speed}, volume: ${this.volume}`);
+    };
+
+    increaseMaxSpeed(newSpeed){
+        this.speed = this.speed + newSpeed;
+        console.log(this.speed);
+    };
+
+    changeYear(newValue){
+        this.year = newValue;
+        console.log(this.year);
+    };
+
+    addDriver(driver){
+        Car.driver = driver
+        console.log(Car);
+    };
+}
+
+
+let bmw = new Car('5 series', 'german', 2001, 170, 3);
+
+bmw.drive();
+bmw.info();
+bmw.increaseMaxSpeed(30);
+bmw.changeYear(2020);
+bmw.addDriver('Stas');
+
+
+
+
+
 //
 //
 // class Car {
