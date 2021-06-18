@@ -297,91 +297,132 @@
 // Написання асинхроного коду в синхроному стилі
 
 
-function orderTour(money) {                 // колбеку вже не потрібно
-
-    return new Promise((resolve, reject) => {
-        console.log('Дякую що звернулися до нас!')
-        console.log('Почекайте поки шукаються доступні тури!')
-
-
-        setTimeout(() => {
-            console.log('Тур знайдено!');
-
-            if (money<500) {
-                reject('треба більше грошей(');                   // не успіх
-            }
-            resolve  ('Занзібар!')                                    // успіх
-
-
-        }, 2000);
-    })
-
-
-}
-
-
-function prepareToTour() {                                // уже не приймає ніякого св
-    return new Promise((resolve) => {
-        setTimeout(()=>{
-            console.log('Я зібрався!')
-            resolve('полетіли!')
-        },1500);
-
-    })
-
-}
-
-function promis1() {
-    return new Promise((resolve, reject) => {
-        resolve(17)
-    })
-}
-
-function promis2() {
-    return new Promise((resolve, reject) => {
-        resolve('TEST')
-    })
-}
-
-
-
-
-
-
+// function orderTour(money) {                 // колбеку вже не потрібно
+//
+//     return new Promise((resolve, reject) => {
+//         console.log('Дякую що звернулися до нас!')
+//         console.log('Почекайте поки шукаються доступні тури!')
+//
+//
+//         setTimeout(() => {
+//             console.log('Тур знайдено!');
+//
+//             if (money<500) {
+//                 reject('треба більше грошей(');                   // не успіх
+//             }
+//             resolve  ('Занзібар!')                                    // успіх
+//
+//
+//         }, 2000);
+//     })
+//
+//
+// }
+//
+//
+// function prepareToTour() {                                // уже не приймає ніякого св
+//     return new Promise((resolve) => {
+//         setTimeout(()=>{
+//             console.log('Я зібрався!')
+//             resolve('полетіли!')
+//         },1500);
+//
+//     })
+//
+// }
+//
+// function promis1() {
+//     return new Promise((resolve, reject) => {
+//         resolve(17)
+//     })
+// }
+//
+// function promis2() {
+//     return new Promise((resolve, reject) => {
+//         resolve('TEST')
+//     })
+// }
+//
+//
+//
+//
+//
+//
+// //
+// // async function asynk () {
+// // const order = await orderTour(600);
+// //     console.log(order, '1');
+// // const preper = await prepareToTour();
+// //     console.log(preper, '2');
+// // const one = await promis1();
+// //     console.log(one, '3');
+// // const two = await promis2();
+// //     console.log(two, '4');
+// // }
+// //
+// // asynk();
+//
+// // при помилках огортаємо потенційно небезпечний код в таку конструкцію
+//
 //
 // async function asynk () {
-// const order = await orderTour(600);
-//     console.log(order, '1');
-// const preper = await prepareToTour();
-//     console.log(preper, '2');
-// const one = await promis1();
-//     console.log(one, '3');
-// const two = await promis2();
-//     console.log(two, '4');
+//     try {
+//
+//         const order = await orderTour(600);
+//         console.log(order, '1');
+//         const preper = await prepareToTour();
+//         console.log(preper, '2');
+//         const one = await promis1();
+//         console.log(one, '3');
+//         const two = await promis2();
+//         console.log(two, '4');
+//     } catch (e) {
+//         console.log(e);
+//     }
 // }
 //
 // asynk();
 
-// при помилках огортаємо потенційно небезпечний код в таку конструкцію
 
 
-async function asynk () {
-    try {
+function f1() {
+    return new Promise(resolve => {
 
-        const order = await orderTour(600);
-        console.log(order, '1');
-        const preper = await prepareToTour();
-        console.log(preper, '2');
-        const one = await promis1();
-        console.log(one, '3');
-        const two = await promis2();
-        console.log(two, '4');
-    } catch (e) {
-        console.log(e);
-    }
+        setTimeout(() => {
+            resolve('1');
+        },3000);
+
+    })
 }
 
-asynk();
+function f2() {
+    return new Promise(resolve => {
+
+        setTimeout(() => {
+            resolve('2');
+        },2000);
+
+    })
+}
+
+function f3() {
+    return new Promise(resolve => {
+
+        setTimeout(() => {
+            resolve('3');
+        },1000);
+
+    })
+}
 
 
+async function fAll() {
+   const a1 = await f1();
+    console.log(a1);
+    const a2 = await f2();
+    console.log(a2);
+    const a3 = await f3();
+    console.log(a3);
+}
 
+fAll();

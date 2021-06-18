@@ -1,9 +1,14 @@
 // *******************************************************************************************************************
 
 // - создать массив с 20 числами.
-
+//
 // let numbers = [93,84,115,3,38,4,1,77,48,90,333,55];
-
+//
+// let arrSort = numbers.sort((a, b)=>{
+//     return a-b;
+// })
+//
+// console.log(arrSort);
 // *******************************************************************************************************************
 
 // -- при помощи метода sort и колбека  отсортировать массив.
@@ -17,6 +22,12 @@
 // ********************************************************************************************************************
 
 // -- при помощи метода sort и колбека отсортировать массив в ниспадающем напралении.
+//
+// let nArr = numbers.sort((a,b)=>{
+//     return b-a;
+// })
+//
+// console.log(nArr);
 
 
 // let num_sort = numbers.sort((a,b)=>{
@@ -28,6 +39,14 @@
 // ********************************************************************************************************************
 
 // -- при помощи filter получить числа кратные 3
+
+// let nFilt = numbers.filter(value => {
+//     return !(value%3);
+// })
+//
+// console.log(nFilt);
+
+
 //
 // let filter_3 = numbers.filter(value => {
 //      return !(value%3)
@@ -50,6 +69,12 @@
 
 // -- перебрать (проитерировать) массив при помощи foreach()
 //
+// let arr = numbers.forEach(value => {
+//     console.log(value);
+// })
+
+
+//
 // let forEach = numbers.forEach((value)=>{
 //     console.log(value);
 // });
@@ -57,6 +82,12 @@
 // ********************************************************************************************************************
 
 // -- перебрать массив при помощи map() и получить новый массив в котором все значения будут в 3 раза больше
+// let arr = numbers.map(value => {
+//     return value*3;
+// })
+// console.log(arr);
+//
+
 //
 // let map = numbers.map(value => {
 //     return value*3
@@ -73,6 +104,15 @@
 //     'Tetiana', 'Halina', 'Artur', 'Vitalik', 'Uriy', 'Serhiy'];
 
 // ******************************************************************************************************************
+// let arr = words.sort((a,b) => {
+//     if (a>b){
+//         return 1;
+//     }
+//     return -1;
+// })
+//
+// console.log(arr);
+
 
 // -- отсортировать его по алфавиту в восходящем порядке.
 //
@@ -101,6 +141,13 @@
 
 // -- отфильтровать слова длиной менее 4х символов
 //
+// let arr = words.filter(value => {
+//     return value.length <5
+// })
+//
+// console.log(arr);
+
+//
 // let words_filter = words.filter(value => {
 //     return  value.length<5
 // });
@@ -122,24 +169,31 @@
 // Все робити через функції масивів (foreach, map ...тд)
 
 // Дан масив :
-//
-//     let users = [
-//     {name: 'vasya', age: 31, status: false},
-//     {name: 'petya', age: 30, status: true},
-//     {name: 'kolya', age: 29, status: true},
-//     {name: 'olya', age: 28, status: false},
-//     {name: 'max', age: 30, status: true},
-//     {name: 'anya', age: 31, status: false},
-//     {name: 'oleg', age: 28, status: false},
-//     {name: 'andrey', age: 29, status: true},
-//     {name: 'masha', age: 30, status: true},
-//     {name: 'olya', age: 31, status: false},
-//     {name: 'max', age: 31, status: true}
-//     ];
+
+    // let users = [
+    // {name: 'vasya', age: 31, status: false},
+    // {name: 'petya', age: 30, status: true},
+    // {name: 'kolya', age: 29, status: true},
+    // {name: 'olya', age: 28, status: false},
+    // {name: 'max', age: 30, status: true},
+    // {name: 'anya', age: 31, status: false},
+    // {name: 'oleg', age: 28, status: false},
+    // {name: 'andrey', age: 29, status: true},
+    // {name: 'masha', age: 30, status: true},
+    // {name: 'olya', age: 31, status: false},
+    // {name: 'max', age: 31, status: true}
+    // ];
 
     // ************************************************************************************************************
 
     // - відсортувати його за  віком (зростання , а потім окремо спадання)
+
+// let year = users.sort((a,b) => {
+//     return a.age - b.age;
+// })
+//
+// console.log(year);
+
 //
 // let us_sort1 = users.sort((a,b,)=>{
 //    return a.age - b.age;
@@ -156,7 +210,13 @@
 // *********************************************************************************************************************
 
 // - відсортувати його за кількістю знаків в імені  (зростання , а потім окремо спадання)
-//
+
+// let name = users.sort((a,b) =>{
+//     return a.name.length - b.name.length;
+// })
+// console.log(name);
+
+
 // let us_sort2 = users.sort((a,b)=>{
 //     return a.name.length - b.name.length;
 // })
@@ -175,6 +235,18 @@
 // - пройтись по ньому та додати кожному юзеру поле id - яке характеризує унікальний індентифікатор (По якому
 // принципу його створювати - ваше рішення), та зберегти це в новий масив (первинний масив залишиться без змін)
 //
+
+// let usersJSON = JSON.parse(JSON.stringify(users))
+//
+// let usId = usersJSON.map(((value, index) => {
+//     value.id = index + 1;
+//     return value;
+// }));
+//
+// console.log(usId);
+// console.log(users);
+
+
 // let user_js = JSON.parse(JSON.stringify(users))
 //
 // let id = user_js.map(value => {
@@ -198,6 +270,17 @@
 // *********************************************************************************************************************
 
 // -- наисать функцию калькулятора с 2мя числами и колбеком
+
+// function calculator(a, b, callback) {
+//         return callback(a, b);
+// }
+//
+// const call = calculator(5,10, (a, b) => {
+//     return a + b;
+// })
+//
+// console.log(call);
+
 
 // function kalc(a, b, callback) {
 //     return callback (a,b);
