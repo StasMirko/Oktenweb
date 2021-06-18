@@ -270,26 +270,47 @@
 // (массив может быть любой длины)
 // условие: нельзя пользоваться методами массивов
 
-let arr = [4,1,3,2,6,8,5,10,7,9];
-let new_arr = [];
-
-for (let i = 0; i < arr.length; i++) {
-
-    setTimeout(() => {
-        new_arr.push(arr[i]);
-    }, arr[i]);
-}
-
-console.log(new_arr);
+// let arr = [4,1,3,2,6,8,5,10,7,9];
+// let new_arr = [];
+//
+// for (let i = 0; i < arr.length; i++) {
+//
+//     setTimeout(() => {
+//         new_arr.push(arr[i]);
+//     }, arr[i]);
+// }
+//
+// console.log(new_arr);
 
 //***********************************************************************************************************
+// в цьому випадку неуспішне виконання одного з пункту не зупиняє подальшого процесу
 
+function orderItem(item, result) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            if (!result){
+                resolve(`You did not fulfill the item: ${item} `);
+            } resolve(`The item ${item} is completed successfully`)
 
+        }, Math.random() * 5000);
+    })
+}
 
+async function routine() {
+    try {
+        const p1 = await orderItem('Wake up at 9', false);
+        console.log(p1);
+        const p2 = await orderItem('Learn IT', true);
+        console.log(p2);
+        const p3 = await orderItem('Learn English', true);
+        console.log(p3);
 
+    } catch (e) {
+        console.log(e);
+    }
+}
 
-
-
+routine();
 
 
 

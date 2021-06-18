@@ -417,12 +417,17 @@ function f3() {
 
 
 async function fAll() {
-   const a1 = await f1();
-    console.log(a1);
-    const a2 = await f2();
-    console.log(a2);
-    const a3 = await f3();
-    console.log(a3);
+    try {
+        const a1 = await f1();
+        console.log(a1);
+        const a2 = await f2();
+        console.log(a2);
+        const a3 = await f3();
+        console.log(a3);
+    } catch (e) {
+        console.log(e);
+    }
+
 }
 
 fAll();
